@@ -13,7 +13,6 @@ app.use(bodyPars.json())
 app.use(bodyPars.urlencoded({extended:false}))
 app.use(cors());
 
-app.use('/',index);
 app.use('/users',users);
 app.use('/questions',questions);
 
@@ -21,6 +20,6 @@ monggo.connect('mongodb://localhost/hackoverflow')
 monggo.connection.on('connected', function() {
   console.log('mongo connected');
 })
-app.listen(3000, function() {
+app.listen(4000, function() {
   console.log('server is running...');
 })

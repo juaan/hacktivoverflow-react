@@ -6,10 +6,10 @@ let routes = require('express').Router(),
 //get user
 routes.get('/', control.getUser)
 routes.get('/:id', control.getOneUser)
-
 //getQuestion by id user
 routes.get('/:iduser/panel',auth.verify, controlQ.getAllQuestionByUserId)
 //post user
-routes.post('/', control.postUser)
+routes.post('/signup', control.postUser)
+routes.post('/login', control.login)
 
 module.exports = routes;
