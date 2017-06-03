@@ -11,6 +11,7 @@ import logo from './logo.svg';
 import './App.css';
 import Footer from './components/Footer';
 import Login from './components/Login';
+import Signup from './components/Signup';
 import Home from './components/Home';
 
 const { Header, Content, Sider } = Layout;
@@ -34,13 +35,14 @@ class App extends Component {
               >
                 <Menu.Item key="1"><Link to="/"> <h1>HacktivOverflow </h1> </Link></Menu.Item>
                 <Menu.Item key="2">Questions</Menu.Item>
-                <Menu.Item key="3" style={{float: 'right'}}><Link to="/login">Login</Link></Menu.Item>
-                <Menu.Item key="4" style={{float: 'right'}}>Logout</Menu.Item>
-                <Menu.Item key="5" style={{float: 'right'}}>Sign up</Menu.Item>
+                <Menu.Item key="3" style={{float: 'right'}}><Link to="/login">Log In</Link></Menu.Item>
+                <Menu.Item key="4" style={{float: 'right'}}>Log Out</Menu.Item>
+                <Menu.Item key="5" style={{float: 'right'}}><Link to="/signup">Sign Up</Link></Menu.Item>
               </Menu>
             </Header>
             <Route exact path='/' component={Home}/>
             <Route path="/login" component={Login}/>
+            <Route path="/signup" component={Signup}/>
             <Footer />
           </Layout>
         </div>

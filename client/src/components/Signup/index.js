@@ -1,16 +1,15 @@
 import React from 'react';
 import { Layout,Form, Icon, Input, Button, Checkbox } from 'antd';
-import {
-  Link
-} from 'react-router-dom';
 
 const FormItem = Form.Item;
 const { Content } = Layout;
 
-class Login extends React.Component {
+class Signup extends React.Component {
+
   constructor(props) {
     super(props)
     this.state = {
+      email: '',
       username: '',
       password: '',
     }
@@ -24,6 +23,7 @@ class Login extends React.Component {
   submitFormLogin = () => {
     console.log(this.state);
   }
+
 
   render() {
     return (
@@ -44,6 +44,15 @@ class Login extends React.Component {
                 </FormItem>
                 <FormItem>
                   <Input
+                    name="email"
+                    onChange={this.handleChange}
+                    value={this.state.email}
+                    prefix={<Icon type="mail" style={{ fontSize: 13 }} />}
+                    placeholder="email"
+                  />
+                </FormItem>
+                <FormItem>
+                  <Input
                     name="password"
                     onChange={this.handleChange}
                     value={this.state.password}
@@ -60,9 +69,8 @@ class Login extends React.Component {
                     className="login-form-button"
                     onClick={this.submitFormLogin}
                   >
-                    Log in
+                    Sign Up
                   </Button>
-                  or <Link to="/signup"> register here ! </Link>
                 </FormItem>
               </Form>
             </div>
@@ -83,4 +91,5 @@ const styles = {
 
   }
 }
-export default Login;
+
+export default Signup;
