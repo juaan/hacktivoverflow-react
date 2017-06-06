@@ -1,10 +1,20 @@
-import { GET_USER } from '../actions/constants';
+import { LOGIN } from '../actions/constants';
 
-const userReducer = (state = [], action) => {
+
+const initialState = {
+  token: '',
+  shouldRedirectSignIn: false,
+  warning: ''
+}
+
+const loginUser = (payload) => {
+  console.log('from reducer',payload)
+}
+
+
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_USER:{
-      return state;
-    }
+    case LOGIN: return loginUser(action.payload);
     default: return state;
   }
 }

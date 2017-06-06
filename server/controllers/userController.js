@@ -27,7 +27,7 @@ module.exports = {
       } else {
         if(pwh.verify(req.body.password,user.password)) {
           let newToken = jwt.sign({username: user.username}, process.env.SECRET_KEY)
-          res.send({success: true, msg:'login success', token: newToken, id: user._id})
+          res.send({success: true, msg:'login success', token: newToken})
         } else {
           res.send({success: false, msg:'Wrong Password'})
         }
@@ -36,6 +36,7 @@ module.exports = {
   },
   postUser: function(req, res) {
     let newUser = new User({
+      email: req.body.email,
       username: req.body.username,
       password: pwh.generate(req.body.password)
     })

@@ -1,8 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Layout,Form, Icon, Input, Button, Checkbox } from 'antd';
 import {
   Link
 } from 'react-router-dom';
+
+import { login } from '../../actions';
 
 const FormItem = Form.Item;
 const { Content } = Layout;
@@ -22,7 +25,7 @@ class Login extends React.Component {
   }
 
   submitFormLogin = () => {
-    console.log(this.state);
+    this.props.login(this.state);
   }
 
   render() {
@@ -83,4 +86,9 @@ const styles = {
 
   }
 }
-export default Login;
+
+const mapDispatchToProps = dispatch => ({
+  login: (datauser) => dispatch(login(datauser)),
+})
+
+export default connect(null,mapDispatchToProps)(Login);

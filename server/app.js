@@ -20,6 +20,6 @@ monggo.connect('mongodb://localhost/hackoverflow')
 monggo.connection.on('connected', function() {
   console.log('mongo connected');
 })
-app.listen(4000, function() {
+app.listen(3030, function() {
   console.log('server is running...');
 })
