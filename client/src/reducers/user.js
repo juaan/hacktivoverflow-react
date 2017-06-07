@@ -3,6 +3,7 @@ import { LOGIN } from '../actions/constants';
 
 const initialState = {
   token: '',
+  username: '',
   shouldRedirectSignIn: false,
   warning: ''
 }
@@ -10,6 +11,7 @@ const initialState = {
 const loginUser = (payload) => {
   if(payload.success) {
     const newState = {
+      username: payload.username,
       token: payload.token,
       shouldRedirectSignIn: true,
       warning: '',

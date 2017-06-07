@@ -1,12 +1,15 @@
 import axios from 'axios';
+import { LOGIN, URL } from './constants';
 
-import { GET_QUESTION, LOGIN, URL } from './constants';
 
-
-const loginSuccess = (datauser) => ({
-  type: LOGIN,
-  payload: datauser
-})
+const loginSuccess = (datauser) => {
+    window.localStorage.setItem('token', datauser.token);
+    window.localStorage.setItem('username', datauser.username);
+    return {
+      type: LOGIN,
+      payload: datauser
+    }
+}
 
 export const login = (datauser) => (
   dispatch => (

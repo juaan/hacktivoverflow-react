@@ -27,7 +27,7 @@ module.exports = {
       } else {
         if(pwh.verify(req.body.password,user.password)) {
           let newToken = jwt.sign({username: user.username}, process.env.SECRET_KEY)
-          res.send({success: true, msg:'login success', token: newToken})
+          res.send({success: true, msg:'login success', token: newToken, username: user.username})
         } else {
           res.send({success: false, msg:'Wrong Password'})
         }

@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^2.10.4",
     "axios": "^0.16.2",
+    "jsonwebtoken": "^7.4.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",

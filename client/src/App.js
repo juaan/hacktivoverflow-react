@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Home from './components/Home';
+import Profile from './components/Profile';
 
 const { Header, Content, Sider } = Layout;
 
@@ -41,8 +42,8 @@ class App extends Component {
                 <Menu.Item key="1"><Link to="/"> <h1>HacktivOverflow </h1> </Link></Menu.Item>
                 <Menu.Item key="2">Questions</Menu.Item>
                 {
-                  token ?
-                  <Menu.Item key="3" style={{float: 'right'}}>Log Out</Menu.Item>
+                  localStorage.getItem('token') ?
+                  <Menu.Item key="3" style={{float: 'right'}}><Link to="/profile">{localStorage.getItem('username')}</Link></Menu.Item>
                   :
                   <Menu.Item key="4" style={{float: 'right'}}><Link to="/login">Log In</Link></Menu.Item>
                 }
@@ -51,6 +52,7 @@ class App extends Component {
             <Route exact path='/' component={Home}/>
             <Route path="/login" component={Login}/>
             <Route path="/signup" component={Signup}/>
+            <Route path="/profile" component={Profile}/>
             <Footer />
           </Layout>
         </div>
