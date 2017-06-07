@@ -1,4 +1,4 @@
-import { LOGIN } from '../actions/constants';
+import { LOGIN,SIGNUP,LOGOUT } from '../actions/constants';
 
 
 const initialState = {
@@ -29,6 +29,8 @@ const loginUser = (payload) => {
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN: return loginUser(action.payload);
+    case SIGNUP: return loginUser(action.payload);
+    case LOGOUT: return initialState;
     default: return state;
   }
 }
