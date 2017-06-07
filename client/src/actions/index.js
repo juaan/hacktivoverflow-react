@@ -11,7 +11,7 @@ const loginSuccess = (datauser) => ({
 export const login = (datauser) => (
   dispatch => (
     axios.post(URL+'users/login', datauser)
-    .then((res) => loginSuccess(res.data))
+    .then((res) => dispatch(loginSuccess(res.data)))
     .catch((err) => {console.log(err)})
   )
 )

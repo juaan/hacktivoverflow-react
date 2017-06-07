@@ -8,7 +8,19 @@ const initialState = {
 }
 
 const loginUser = (payload) => {
-  console.log('from reducer',payload)
+  if(payload.success) {
+    const newState = {
+      token: payload.token,
+      shouldRedirectSignIn: true,
+      warning: '',
+    }
+    return newState;
+  } else {
+    return {
+      ...initialState,
+      warning: 'username or password invalid',
+    }
+  }
 }
 
 

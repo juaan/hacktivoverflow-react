@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 
 import logo from './logo.svg';
@@ -17,7 +18,12 @@ import Home from './components/Home';
 const { Header, Content, Sider } = Layout;
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const {token} = this.props.user;
     return (
       <Router>
         <div className="App">
@@ -30,14 +36,16 @@ class App extends Component {
               <Menu
                 theme="dark"
                 mode="horizontal"
-                defaultSelectedKeys={['2']}
                 style={{ lineHeight: '64px' }}
               >
                 <Menu.Item key="1"><Link to="/"> <h1>HacktivOverflow </h1> </Link></Menu.Item>
                 <Menu.Item key="2">Questions</Menu.Item>
-                <Menu.Item key="3" style={{float: 'right'}}><Link to="/login">Log In</Link></Menu.Item>
-                <Menu.Item key="4" style={{float: 'right'}}>Log Out</Menu.Item>
-                <Menu.Item key="5" style={{float: 'right'}}><Link to="/signup">Sign Up</Link></Menu.Item>
+                {
+                  token ?
+                  <Menu.Item key="3" style={{float: 'right'}}>Log Out</Menu.Item>
+                  :
+                  <Menu.Item key="4" style={{float: 'right'}}><Link to="/login">Log In</Link></Menu.Item>
+                }
               </Menu>
             </Header>
             <Route exact path='/' component={Home}/>
@@ -51,4 +59,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps, null)(App);
