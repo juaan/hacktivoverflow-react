@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout,Menu, Icon } from 'antd';
+import { Layout,Menu, Icon, Button } from 'antd';
 import {
   BrowserRouter as Router,
   Route,
@@ -29,7 +29,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Layout>
-            <Header style={{ position: 'fixed' ,width: '100%'}}>
+            <Header style={{ position: 'fixed' ,width: '100%', zIndex: 20 }}>
               <div className="logo">
                 <img src={logo} className="App-logo" alt="logo" />
               </div>
@@ -49,6 +49,7 @@ class App extends Component {
                 }
               </Menu>
             </Header>
+            <Button type="primary" icon="plus" style={{ minWidth: '130px', width: '130px', marginTop: 74, marginLeft: 50}}> Add Question </Button>
             <Route exact path='/' component={Home}/>
             <Route path="/login" component={Login}/>
             <Route path="/signup" component={Signup}/>
