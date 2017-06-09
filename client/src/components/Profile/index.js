@@ -33,7 +33,8 @@ class Profile extends React.Component {
       if(this.state.isLogin) {
         return (
           <Layout>
-            <Content style={{ marginTop:10 }}>
+            <Content style={{ minWidth: '130px', width: '130px', marginTop: 74, marginLeft: 50 }}>
+              <Link to="/add/question"><Button type="primary" icon="plus">Add Question</Button></Link>
               <Button type="danger" onClick={this.handleLogout}><Link to="/">Log Out</Link></Button>
             </Content>
           </Layout>

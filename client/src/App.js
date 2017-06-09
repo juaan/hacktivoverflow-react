@@ -15,6 +15,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Home from './components/Home';
 import Profile from './components/Profile';
+import FormAddQuestion from './components/FormAddQuestion';
 
 const { Header, Content, Sider } = Layout;
 
@@ -49,11 +50,11 @@ class App extends Component {
                 }
               </Menu>
             </Header>
-            <Button type="primary" icon="plus" style={{ minWidth: '130px', width: '130px', marginTop: 74, marginLeft: 50}}> Add Question </Button>
             <Route exact path='/' component={Home}/>
             <Route path="/login" component={Login}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/add/question" component={FormAddQuestion}/>
             <Footer />
           </Layout>
         </div>
