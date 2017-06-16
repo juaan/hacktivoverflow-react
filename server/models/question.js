@@ -5,7 +5,7 @@ let monggo = require('mongoose'),
 let questionSchema = new Schema ({
   title: {type: String, required: true},
   content: {type: String, required: true},
-  user: {type:Schema.Types.ObjectId, ref:'User'},
+  user: {type:Schema.Types.String, ref:'User'},
   upVotes: [{type:Schema.Types.ObjectId, ref:'User'}],
   downVotes: [{type:Schema.Types.ObjectId, ref:'User'}],
   answers: [answerSch],

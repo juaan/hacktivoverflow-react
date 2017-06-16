@@ -20,7 +20,7 @@ module.exports = {
     })
     newQuestion.save(function(err,result) {
       if(!err) {
-        res.send({success: true, msg:'insert question success'})
+        res.send({success: true, msg:'insert question success', result})
       } else {
         res.send(err)
       }

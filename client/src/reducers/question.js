@@ -1,16 +1,17 @@
-import { GET_QUESTION } from '../actions/constants';
+import { GET_QUESTION, POST_QUESTION } from '../actions/constants';
 
-const initialState = [
-  {
-    title: 'mantab soul',
-    question: 'kemantaban ilahi'
-  }
-]
+const initialState = []
 
 const questionReducer = (state=initialState, action) => {
   switch (action.type) {
     case GET_QUESTION: {
       return state
+    }
+    case POST_QUESTION:{
+      return {
+        ...state,
+        ...action.payload
+      }
     }
     default: return state
 
