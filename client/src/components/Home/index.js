@@ -14,7 +14,7 @@ const Home = () => (
         <Link to="/login"><Button type="primary" icon="plus" style={{ minWidth: '130px', width: '130px', marginTop: 74, marginLeft: 50 }}>Add Question</Button></Link>
       }
 
-      <Content style={{ padding: '0 50px', marginTop: 10, width: '80%' }}>
+      <Content style={{ padding: '0 50px', marginTop: 10, marginBottom : 20 , width: '80%' }}>
         <div style={{ background: '#fff', padding: 24, minHeight: 600 }}>Content</div>
       </Content>
     </Layout>
