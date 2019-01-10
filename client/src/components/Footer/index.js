@@ -4,7 +4,6 @@ const styles = {
   div: {
     width: '100%',
     backgroundColor: 'ghostwhite',
-    marginTop: 10,
     padding: 10,
     bottom: 0
   }
