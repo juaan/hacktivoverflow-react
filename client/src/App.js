@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Layout>
+          <Layout className="main-container">
             <Header style={{ position: 'fixed' ,width: '100%', zIndex: 20 }}>
               <div className="logo">
                 <img src={logo} className="App-logo" alt="logo" />
@@ -55,8 +55,8 @@ class App extends Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/add/question" component={FormAddQuestion}/>
-            <Footer />
           </Layout>
+          <Footer className="footer-container"/>
         </div>
       </Router>
     );

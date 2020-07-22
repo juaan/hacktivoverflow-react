@@ -26,13 +26,12 @@ class FormAddQuestion extends React.Component {
   }
 
   submitQuestion = () => {
-    this.setState({
-      title:'',
-      content:'',
-      questionPosted: true
-    }, () => {
       this.props.postQuestion(this.state);
-    })
+      this.setState({
+        title:'',
+        content:'',
+        questionPosted: true
+      })
   }
 
   render() {

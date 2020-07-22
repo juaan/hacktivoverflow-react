@@ -1,4 +1,4 @@
-import { GET_QUESTION, POST_QUESTION } from '../actions/constants';
+import { GET_QUESTION, POST_QUESTION , GOT_QUESTIONS } from '../actions/constants';
 
 const initialState = []
 
@@ -7,7 +7,13 @@ const questionReducer = (state=initialState, action) => {
     case GET_QUESTION: {
       return state
     }
-    case POST_QUESTION:{
+    case POST_QUESTION: {
+      return {
+        ...state,
+        ...action.payload
+      }
+    }
+    case GOT_QUESTIONS: {
       return {
         ...state,
         ...action.payload

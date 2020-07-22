@@ -1,4 +1,4 @@
 import { login, logout, signup } from './userActions';
-import { postQuestion } from './questionActions';
+import { postQuestion, getAllQuestions } from './questionActions';
 
-export { login, logout, signup, postQuestion };
+export { login, logout, signup, postQuestion, getAllQuestions };
